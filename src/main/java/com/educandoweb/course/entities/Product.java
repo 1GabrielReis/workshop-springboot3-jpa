@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -99,6 +101,7 @@ public class Product implements Serializable {
 		return categories;
 	}
 	
+	@JsonIgnore // => ele que chama a clase que esta com meny-to-one => OrderItemPK id
 	public Set<Order> setOrders(){
 		Set<Order> set= new HashSet<>();
 		for(OrderItem x : items) {

@@ -40,7 +40,7 @@ public class OrderItem implements Serializable {
 	public void setOrder(Order order) {
 		id.setOrder(order);
 	}
-	@JsonIgnore // => ele que chama a clase que esta com meny-to-one => OrderItemPK id
+	
 	public Product getProduct() {
 		return id.getProduct();
 	}
